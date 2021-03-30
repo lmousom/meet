@@ -38,22 +38,12 @@ function setLocalStream(stream){
     video.muted = true;
     video.play();
 }
-function setRemoteStream(stream){
+async function setRemoteStream(stream){
    
     let video = document.getElementById("remote-video");
     video.srcObject = stream;
-    var playPromise = video.play();
+   return video.play();
     
-    if (playPromise !== undefined) {
-    playPromise.then(e => {
-      // Automatic playback started!
-      // Show playing UI.
-       
-    })
-    .catch(error => {
-      // Auto-play was prevented
-      // Show paused UI.
-    });
     
 }
 
