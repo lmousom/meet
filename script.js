@@ -40,9 +40,9 @@ function setLocalStream(stream){
 }
 async function setRemoteStream(stream){
    
-    let video = document.getElementById("remote-video");
+    let video = await document.getElementById("remote-video");
     video.srcObject = stream;
-   return video.play();
+    video.play();
     
     
 }
