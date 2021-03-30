@@ -42,7 +42,19 @@ function setRemoteStream(stream){
    
     let video = document.getElementById("remote-video");
     video.srcObject = stream;
-    video.play();
+    var playPromise = video.play();
+    
+    if (playPromise !== undefined) {
+    playPromise.then(_ => {
+      // Automatic playback started!
+      // Show playing UI.
+        video.pause();
+    })
+    .catch(error => {
+      // Auto-play was prevented
+      // Show paused UI.
+    });
+    
 }
 
 function hideModal(){
