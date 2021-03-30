@@ -48,7 +48,7 @@ function setRemoteStream(stream){
     playPromise.then(e => {
       // Automatic playback started!
       // Show playing UI.
-        video.play();
+       
     })
     .catch(error => {
       // Auto-play was prevented
